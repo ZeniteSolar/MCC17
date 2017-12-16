@@ -17,6 +17,8 @@
 #include "usart.h"
 #include "dbg_vrb.h"
 #include "machine.h"
+#include "PeO.h"
+#include "../lib/cbuf.h"
 
 #ifndef INITIAL_D
 #define INITIAL_D 0

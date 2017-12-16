@@ -14,6 +14,19 @@
 #include <avr/wdt.h>
 
 #include "conf.h"
+
+// limits of value
+#define MAXIMUM_RUNNING_PANEL_CURRENT 12546 // 12,546 A
+#define MINIMUM_RUNNING_PANEL_CURRENT 0
+#define MAXIMUM_RUNNING_PANEL_VOLTAGE 40086 // 40,09 V
+#define MINIMUM_RUNNING_PANEL_VOLTAGE 0
+#define MAXIMUM_BATTERY_VOLTAGE 51612 // 51,61 V  maximum value of voltage from battery in VOLTS
+#define MINIMUM_BATTERY_VOLTAGE 15000 // 15 V minimum value of voltage from battery in VOLTS
+
+#define CONVERSION_PANEL_CURRENT_VALUE   82
+#define CONVERSION_PANEL_VOLTAGE_VALUE   262
+#define CONVERSION_BATTERY_VOLTAGE_VALUE 253
+
 #ifdef ADC_ON
 #include "adc.h"
 #endif
@@ -48,7 +61,11 @@ typedef union system_flags{
 typedef union error_flags{
     struct{
         uint8_t     overcurrent :1;
+		uint8_t		undercurrent:1;
         uint8_t     overvoltage :1;
+		uint8_t		undervoltage:1;
+		uint8_t		overvolt_panel:1;
+		uint8_t		undervol_panel:1;
         uint8_t     overheat    :1;
         uint8_t     fault       :1;
         uint8_t     no_canbus   :1;
@@ -67,6 +84,10 @@ typedef struct control{
     uint8_t     R;              // value of angular velocity in RPMS
     uint8_t     T;              // value of temperature in CELCIUS DEGREES
     uint8_t     fault;          // counts the faults from ir2127
+	uint8_t		updown;			// value of comp. in function pertub_and_observe()
+	uint16_t	pi_med;			// value of power in WATTS
+	uint16_t	pi_med_old;		//value of power old in WATTS
+	uint8_t		V_bat;			// value of voltage in VOLTS
 
 }control_t;
 
@@ -75,8 +96,9 @@ control_t control;
 // machine checks
 void check_idle_current(void);
 void check_idle_voltage(void);
-void check_running_current(void);
-void check_running_voltage(void);
+void check_running_panel_current(void);
+void check_running_panel_voltage(void);
+void check_running_battery_voltage(void);
 //void check_can(void);         // transfered to can_app.h
 void check_pwm_fault(void);
 

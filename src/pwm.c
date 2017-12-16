@@ -46,52 +46,17 @@ inline void pwm_reset(void)
 /**
  * @brief computs duty-cycle for PWM
  */
-/*
+
 inline void pwm_compute(void)
-{
-
-    // it defines the arctan of D curve
-    if(control.I_raw < control.I_raw_target){
-        control.I_raw++;
-    }else if(control.I_raw >= control.I_raw_target){
-        control.I_raw = control.I_raw_target;
+{	
+	pertub_and_observe();
+	
+	// treats fault from ir2127
+    if(control.fault || error_flags.overvoltage){
+        control.fault = error_flags.overvoltage = 0;
+        if(control.D >= 2)     control.D -= 2;
+        else                        control.D = 0;
     }
-
-    if(control.D_raw < control.D_raw_target){           //!< law for D increasing
-        if((pwm_d_clk_div++ +8) >= ((control.I_raw >> 3))){
-            control.D_raw += PWM_D_DELTA;
-            pwm_d_clk_div = 0;
-        }
-    }else if(control.D_raw >= control.D_raw_target){    //!< law for D decreasing
-        control.D_raw = control.D_raw_target;
-    }
-
-    // treats fault from ir2127
-    if(control.fault){
-        control.fault = 0;
-        if(control.D_raw >= 2)     control.D_raw -= 2;
-        else                        control.D_raw = 0;
-    }
-*/
-/**
- * @brief P&O algorithm
- */
-inline void mppt_task(void)
-{
-	// Computes power input
-	pi_med = adc_voltage*adc_current;
-	// Respects limits for duty Cycle
-	if( pi_med < pi_med_old )	updown ^=1; // configurar updown como variavel global (talvez)
-
-	// Apply a perturbation
-	if(!updown) d -= D_STEP;		// (1) configurar d como variavel global; (2) configurar D_STEP como um DEFINE
-	else d += D_STEP;
-
-	// recycles
-	pi_med_old = pi_med;
-}
-    // converts to OCR1A range.
-    control.D = (control.D_raw*PWM_D_LIN_MULT) >> PWM_D_LIN_DIV;
 
     // apply some threshhold saturation limits
     if(control.D > PWM_D_MAX_THRESHHOLD)        control.D = PWM_D_MAX;
@@ -103,7 +68,7 @@ inline void mppt_task(void)
     VERBOSE_MSG_PWM(usart_send_string("PWM computed as: "));
     VERBOSE_MSG_PWM(usart_send_uint16(OCR1A));
     VERBOSE_MSG_PWM(usart_send_char('\n'));
- 
+	
 }
 
 /**

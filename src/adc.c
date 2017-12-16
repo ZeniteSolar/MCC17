@@ -6,6 +6,8 @@
 void init_buffers(void)
 {
     CBUF_Init(cbuf_adc0);
+    CBUF_Init(cbuf_adc1);
+    CBUF_Init(cbuf_adc2);
 }
 
 /**
@@ -26,12 +28,49 @@ uint8_t ma_adc0(void)
 }
 
 /**
+* @brief computes the average of a given adc channel
+*
+* Ma = (1/N)*Summation of x[i] from i=0 to N, 
+* if N = 2^k, then Ma = (Summation of x[i] from i=0 to N) >> k
+*
+*/
+uint8_t ma_adc1(void)
+{   
+    uint16_t sum = 0;
+    for(uint8_t i = cbuf_adc1_SIZE; i; i--){
+        sum += CBUF_Get(cbuf_adc1, i);
+    }
+    avg_adc1 = sum >> cbuf_adc1_SIZE_2;
+    return avg_adc1;
+}
+
+/**
+* @brief computes the average of a given adc channel 
+*
+* Ma = (1/N)*Summation of x[i] from i=0 to N, 
+* if N = 2^k, then Ma = (Summation of x[i] from i=0 to N) >> k
+*
+*/
+uint8_t ma_adc2(void)
+{   
+    uint16_t sum = 0;
+    for(uint8_t i = cbuf_adc2_SIZE; i; i--){
+        sum += CBUF_Get(cbuf_adc2, i);
+    }
+    avg_adc2 = sum >> cbuf_adc2_SIZE_2;
+    return avg_adc2;
+}
+
+/**
  * @brief Muda o canal do adc
+ * @param __ch is the channel to be switched to
+ * @return return the selected channel
  */
-void adc_select_channel(adc_channels_t __ch)
+uint8_t adc_select_channel(adc_channels_t __ch)
 {
     ADC_CHANNEL = __ch;
     ADMUX = (ADMUX & 0xF8) | ADC_CHANNEL; // clears the bottom 3 bits before ORing
+    return ADC_CHANNEL;
 }
 
 /**
@@ -39,10 +78,11 @@ void adc_select_channel(adc_channels_t __ch)
  */
 void adc_init(void)
 {
+
     // configuracao do ADC
     PORTC   =   0b00000000;                         // pull-up for adcs
     DDRC    =   0b00000000;                         // all adcs as inputs
-    DIDR0   =   0b11111111;                         // All ADC Pin is disabled for digital use.
+    DIDR0   =   0b00000111;                         // ADC0 to ADC2 as adc (digital disable)
 
     ADMUX   =   (0 << REFS1)                        // AVcc with external capacitor at AREF pin
             | (1 << REFS0)
@@ -64,7 +104,7 @@ void adc_init(void)
 
     // configuracao do Timer TC0 --> TIMER DO ADC
     TCCR0A  =   (1 << WGM01) | (0 << WGM00)         // Timer 0 in Mode 2 = CTC (clear on compare)
-            | (0 << COM0A1) | (1 << COM0A0)         // Toggle OC0A on Compare Match
+            | (0 << COM0A1) | (0 << COM0A0)         // Normal port operation
             | (0 << COM0B1) | (0 << COM0B0);        // do nothing with OC0B
     TCCR0B  =   (0 << WGM02)                        // Timer 0 in Mode 2 = CTC (clear on compare)
             | (0 << FOC0A) | (0 << FOC0B)           // dont force outputs
@@ -72,8 +112,8 @@ void adc_init(void)
             | (0 << CS01)
             | (0 << CS00);
 
-	OCR0A  =    207;                                    // Valor para igualdade de comparacao A para frequencia de 150 Hz
-    TIMSK0 |=   (1 << OCIE0A);                        // Ativa a interrupcao na igualdade de comparação do TC0 com OCR0A
+	OCR0A  =    20;                                 // Valor para igualdade de comparacao A para frequencia de ~1500 Hz
+    TIMSK0 |=   (1 << OCIE0A);                      // Ativa a interrupcao na igualdade de comparação do TC0 com OCR0A
 
 }
 
@@ -81,13 +121,24 @@ void adc_init(void)
  * @brief MUX do ADC
  */
 ISR(ADC_vect){
-    //raw_adc[ADC_CHANNEL] = ADCH;                  // utilizando o raw
-    CBUF_Push(cbuf_adc0, ADCH);                     // utilizando a media
-
-    //VERBOSE_MSG(usart_send_char(ADC_CHANNEL));   
-    
-    // TODO: TESTAR O MUX:
-    //if(++ADC_CHANNEL > ADC_LAST_CHANNEL) ADC_CHANNEL = ADC0;
+    switch(ADC_CHANNEL){
+        case ADC0:
+            CBUF_Push(cbuf_adc0, ADCH); 
+            ADC_CHANNEL++;
+            break;
+        case ADC1:
+            CBUF_Push(cbuf_adc1, ADCH); 
+            ADC_CHANNEL++;
+            break;
+        case ADC2:
+            CBUF_Push(cbuf_adc2, ADCH);
+			ADC_CHANNEL++;
+            //break;
+        default:
+            ADC_CHANNEL = ADC0;             // recycles
+            break;
+    }        
+    adc_select_channel(ADC_CHANNEL);
 }
  
 /**
