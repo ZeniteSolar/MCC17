@@ -1,0 +1,1737 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?application progid="SMath Studio Desktop" version="0.98.6179.21440"?>
+<regions>
+  <settings>
+    <identity>
+      <id>84473976-92dd-4d97-923c-35337c296d34</id>
+      <revision>233</revision>
+    </identity>
+    <calculation>
+      <precision>4</precision>
+      <exponentialThreshold>5</exponentialThreshold>
+      <fractions>decimal</fractions>
+    </calculation>
+    <pageModel active="false" printAreas="true" simpleEqualsOnly="false" printBackgroundImages="true">
+      <paper id="1" orientation="Portrait" width="850" height="1100" />
+      <margins left="39" right="39" top="39" bottom="39" />
+      <header alignment="Center" color="#a9a9a9">&amp;[DATE] &amp;[TIME] - &amp;[FILENAME]</header>
+      <footer alignment="Center" color="#a9a9a9">&amp;[PAGENUM] / &amp;[COUNT]</footer>
+      <backgrounds />
+    </pageModel>
+    <dependencies>
+      <assembly name="SMath Studio Desktop" version="0.98.6179.21440" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="Math Region" version="0.98.6179.21440" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="Text Region" version="1.10.6179.21446" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
+    </dependencies>
+  </settings>
+  <region id="0" left="243" top="9" width="255" height="33" color="#000000" bgColor="#ffffff" fontSize="16">
+    <text lang="eng">
+      <p>CONVERSOR DC-DC CUK</p>
+    </text>
+  </region>
+  <region id="1" left="27" top="54" width="352" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>Parâmetros de entrada (painel fotovoltaico)</p>
+    </text>
+  </region>
+  <region id="2" top="72" color="#000000" bgColor="#ffffff">
+    <area collapsed="false" />
+    <region id="3" left="54" top="90" width="85" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão de máxima potência</p>
+        </description>
+        <input>
+          <e type="operand">Vmp</e>
+          <e type="operand">31.1</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="4" left="288" top="90" width="85" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão de circuito aberto</p>
+        </description>
+        <input>
+          <e type="operand">Voc</e>
+          <e type="operand">38.1</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="5" left="54" top="135" width="85" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Corrente de máxima potência</p>
+        </description>
+        <input>
+          <e type="operand">Imp</e>
+          <e type="operand">8.37</e>
+          <e type="operand" style="unit">A</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="6" left="288" top="135" width="85" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Corrente de curto-circuito</p>
+        </description>
+        <input>
+          <e type="operand">Ioc</e>
+          <e type="operand">8.98</e>
+          <e type="operand" style="unit">A</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="7" left="54" top="180" width="177" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Potência máxima</p>
+        </description>
+        <input>
+          <e type="operand">Pmp</e>
+          <e type="operand">Vmp</e>
+          <e type="operand">Imp</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">260.307</e>
+          <e type="operand" style="unit">W</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region id="8" left="54" top="225" width="85" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Corrente do fusível do painel</p>
+        </description>
+        <input>
+          <e type="operand">Ifuse</e>
+          <e type="operand">15</e>
+          <e type="operand" style="unit">A</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="9" top="288" color="#000000" bgColor="#ffffff">
+      <area terminator="true" />
+    </region>
+  </region>
+  <region id="10" left="27" top="315" width="320" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>Parâmetros de saída (banco de baterias)</p>
+    </text>
+  </region>
+  <region id="11" top="333" color="#000000" bgColor="#ffffff">
+    <area collapsed="false" />
+    <region id="12" left="54" top="351" width="85" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão nominal de uma bateria</p>
+        </description>
+        <input>
+          <e type="operand">Vcell</e>
+          <e type="operand">12</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="13" left="54" top="396" width="165" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão mínima de uma bateria</p>
+        </description>
+        <input>
+          <e type="operand">Vcell_cut_off</e>
+          <e type="operand">10.5</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="14" left="54" top="441" width="165" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão de plena carga de uma bateria</p>
+        </description>
+        <input>
+          <e type="operand">Vcell_charged</e>
+          <e type="operand">13.1</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="15" left="54" top="486" width="197" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão aplicada para carga rápida</p>
+        </description>
+        <input>
+          <e type="operand">Vcell_fast_charge</e>
+          <e type="operand">15.6</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="16" left="54" top="531" width="83" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Número de bateiras em série</p>
+        </description>
+        <input>
+          <e type="operand">n_serie</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="17" left="54" top="576" width="337" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão mínima para o banco de baterias</p>
+        </description>
+        <input>
+          <e type="operand">Vbat_cut_off</e>
+          <e type="operand">n_serie</e>
+          <e type="operand">Vcell_cut_off</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">31.5</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region id="18" left="54" top="621" width="337" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão de plena carga para o banco de baterias</p>
+        </description>
+        <input>
+          <e type="operand">Vbat_charged</e>
+          <e type="operand">n_serie</e>
+          <e type="operand">Vcell_charged</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">39.3</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region id="19" left="54" top="666" width="401" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão aplicada para carga rápida para o banco de baterias</p>
+        </description>
+        <input>
+          <e type="operand">Vbat_fast_charge</e>
+          <e type="operand">n_serie</e>
+          <e type="operand">Vcell_fast_charge</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">46.8</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region id="20" top="729" color="#000000" bgColor="#ffffff">
+      <area terminator="true" />
+    </region>
+  </region>
+  <region id="21" left="27" top="756" width="192" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>Parâmetros do conversor</p>
+    </text>
+  </region>
+  <region id="22" top="774" color="#000000" bgColor="#ffffff">
+    <area collapsed="false" />
+    <region id="23" left="54" top="801" width="118" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão de entrada</p>
+        </description>
+        <input>
+          <e type="operand">Vi</e>
+          <e type="operand">Vmp</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">31.1</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region id="24" left="207" top="801" width="222" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão na saída</p>
+        </description>
+        <input>
+          <e type="operand">Vo</e>
+          <e type="operand">Vbat_fast_charge</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">46.8</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region id="25" left="477" top="801" width="203" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <input>
+          <e type="operand">fator_de_sobrecarga</e>
+          <e type="operand">1.15</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="26" left="477" top="828" width="297" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Potência de entrada</p>
+        </description>
+        <input>
+          <e type="operand">Pi</e>
+          <e type="operand">fator_de_sobrecarga</e>
+          <e type="operand">Pmp</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">299.353</e>
+          <e type="operand" style="unit">W</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region id="27" left="207" top="846" width="93" height="23" color="#000000" bgColor="#ffffff" fontSize="10" showInputData="False">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Frequência de chaveamento</p>
+        </description>
+        <input>
+          <e type="operand">f</e>
+          <e type="operand">100000</e>
+          <e type="operand" style="unit">Hz</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="28" left="477" top="882" width="134" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Potência de saída</p>
+        </description>
+        <input>
+          <e type="operand">Po</e>
+          <e type="operand">Pi</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">299.353</e>
+          <e type="operand" style="unit">W</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region id="29" left="54" top="900" width="150" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão máxima na entrada em que o conversor deve atuar</p>
+        </description>
+        <input>
+          <e type="operand">Vi_max</e>
+          <e type="operand">Voc</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">38.1</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region id="30" left="477" top="936" width="138" height="47" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Resistor de carga nominal</p>
+        </description>
+        <input>
+          <e type="operand">Ro</e>
+          <e type="operand">Vo</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operand">Po</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">7.3166</e>
+          <e type="operand" style="unit">Ω</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region id="31" left="54" top="954" width="93" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>Tensão mínima na entrada em que o conversor deve atuar</p>
+        </description>
+        <input>
+          <e type="operand">Vi_min</e>
+          <e type="operand">10</e>
+          <e type="operand" style="unit">V</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="32" left="54" top="1008" width="115" height="23" color="#000000" bgColor="#ffffff" fontSize="10" showInputData="False">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>%Ripple de corrente no indutor de entrada</p>
+        </description>
+        <input>
+          <e type="operand">RippleLi</e>
+          <e type="operand">14.5</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="33" left="54" top="1062" width="115" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>%Ripple de corrente no indutor de saída</p>
+        </description>
+        <input>
+          <e type="operand">RippleLo</e>
+          <e type="operand">14.6</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="34" left="54" top="1116" width="107" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>%Ripple de tensão no capacitor de acoplamento</p>
+        </description>
+        <input>
+          <e type="operand">RippleC</e>
+          <e type="operand">1.25</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="35" left="54" top="1170" width="115" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+      <math>
+        <description active="true" position="Top" lang="eng">
+          <p>%Ripple de tensão no capacitor de saída</p>
+        </description>
+        <input>
+          <e type="operand">RippleCo</e>
+          <e type="operand">0.35</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region id="36" top="1233" color="#000000" bgColor="#ffffff">
+      <area terminator="true" />
+    </region>
+  </region>
+  <region id="37" left="27" top="1260" width="88" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>Resultados</p>
+    </text>
+  </region>
+  <region id="38" top="1287" color="#000000" bgColor="#ffffff">
+    <area single="true" collapsed="true" />
+  </region>
+  <region id="39" left="54" top="1305" width="137" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Ciclo de trabalho nominal</p>
+      </description>
+      <input>
+        <e type="operand">D</e>
+        <e type="operand">Vo</e>
+        <e type="operand">Vo</e>
+        <e type="operand">Vi</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">0.6008</e>
+      </result>
+    </math>
+  </region>
+  <region id="40" left="270" top="1305" width="201" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Ciclo de trabalho mínimo</p>
+      </description>
+      <input>
+        <e type="operand">D_min</e>
+        <e type="operand">Vo</e>
+        <e type="operand">Vo</e>
+        <e type="operand">Vi_max</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">0.5512</e>
+      </result>
+    </math>
+  </region>
+  <region id="41" left="513" top="1305" width="201" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Ciclo de trabalho máximo</p>
+      </description>
+      <input>
+        <e type="operand">D_max</e>
+        <e type="operand">Vo</e>
+        <e type="operand">Vo</e>
+        <e type="operand">Vi_min</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">0.8239</e>
+      </result>
+    </math>
+  </region>
+  <region id="42" top="1377" color="#000000" bgColor="#ffffff">
+    <area single="true" collapsed="true" />
+  </region>
+  <region id="43" left="54" top="1395" width="328" height="27" color="#ff0000" bgColor="#ffffff" fontSize="12">
+    <text lang="por">
+      <p>Cálculos para Indutor de Entrada</p>
+    </text>
+  </region>
+  <region id="44" left="54" top="1422" width="206" height="43" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Corrente média no Indutor de Entrada</p>
+      </description>
+      <input>
+        <e type="operand">ILi_med</e>
+        <e type="operand">D</e>
+        <e type="operand">Po</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">Vo</e>
+        <e type="operand">1</e>
+        <e type="operand">D</e>
+        <e type="operator" args="2">-</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">9.6255</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="45" left="387" top="1422" width="261" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Ondulação da corrente no Indutor de Entrada</p>
+      </description>
+      <input>
+        <e type="operand">ΔILi</e>
+        <e type="operand">ILi_med</e>
+        <e type="operand">RippleLi</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">100</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">1.3957</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="46" left="54" top="1503" width="281" height="49" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Corrente eficaz no Indutor de Entrada</p>
+      </description>
+      <input>
+        <e type="operand">ILi_rms</e>
+        <e type="operand">ILi_med</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">ΔILi</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">12</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">-</e>
+        <e type="function" preserve="true" args="1">sqrt</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">9.6171</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="47" left="387" top="1503" width="310" height="43" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Corrente máxima no Indutor de Entrada</p>
+      </description>
+      <input>
+        <e type="operand">ILi_max</e>
+        <e type="operand">D</e>
+        <e type="operand">Po</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">Vo</e>
+        <e type="operand">1</e>
+        <e type="operand">D</e>
+        <e type="operator" args="2">-</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">/</e>
+        <e type="operand">1</e>
+        <e type="operand">RippleLi</e>
+        <e type="operand">200</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">10.3233</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="48" left="54" top="1584" width="214" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Indutância de Entrada</p>
+      </description>
+      <input>
+        <e type="operand">Li</e>
+        <e type="operand">Vo</e>
+        <e type="operand">1</e>
+        <e type="operand">D_min</e>
+        <e type="operator" args="2">-</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">f</e>
+        <e type="operand">ΔILi</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">μH</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">150.4776</e>
+      </result>
+    </math>
+  </region>
+  <region id="49" top="1647" color="#000000" bgColor="#ffffff">
+    <area single="true" collapsed="true" />
+  </region>
+  <region id="50" left="54" top="1674" width="308" height="27" color="#ff0000" bgColor="#ffffff" fontSize="12">
+    <text lang="por">
+      <p>Cálculos para Indutor de Saída</p>
+    </text>
+  </region>
+  <region id="51" left="54" top="1710" width="170" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Corrente média no Indutor de Saída</p>
+      </description>
+      <input>
+        <e type="operand">ILo_med</e>
+        <e type="operand">Po</e>
+        <e type="operand">Vo</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">6.3964</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="52" left="351" top="1710" width="261" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Ondulação da corrente no Indutor de Saída</p>
+      </description>
+      <input>
+        <e type="operand">ΔILo</e>
+        <e type="operand">ILo_med</e>
+        <e type="operand">RippleLo</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">100</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">0.9339</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="53" left="54" top="1782" width="281" height="49" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Corrente eficaz no Indutor de Saída</p>
+      </description>
+      <input>
+        <e type="operand">ILo_rms</e>
+        <e type="operand">ILo_med</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">ΔILo</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">12</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">-</e>
+        <e type="function" preserve="true" args="1">sqrt</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">6.3907</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="54" left="351" top="1782" width="266" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Corrente máxima no Indutor de Saída</p>
+      </description>
+      <input>
+        <e type="operand">ILo_max</e>
+        <e type="operand">Po</e>
+        <e type="operand">Vo</e>
+        <e type="operator" args="2">/</e>
+        <e type="operand">1</e>
+        <e type="operand">RippleLo</e>
+        <e type="operand">200</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">6.8634</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="55" left="54" top="1863" width="173" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Indutância de Saída</p>
+      </description>
+      <input>
+        <e type="operand">Lo</e>
+        <e type="operand">D</e>
+        <e type="operand">Vi</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">f</e>
+        <e type="operand">ΔILo</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">μH</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">200.0682</e>
+      </result>
+    </math>
+  </region>
+  <region id="56" top="1935" color="#000000" bgColor="#ffffff">
+    <area terminator="true" />
+  </region>
+  <region id="57" left="54" top="1953" width="388" height="27" color="#ff0000" bgColor="#ffffff" fontSize="12">
+    <text lang="por">
+      <p>Cálculos para Capacitor de Acoplamento</p>
+    </text>
+  </region>
+  <region id="58" left="54" top="1989" width="146" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Tensão média no Capacitor de Acoplamento</p>
+      </description>
+      <input>
+        <e type="operand">VC_med</e>
+        <e type="operand">Vo</e>
+        <e type="operand">D</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">77.9</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="59" left="387" top="1989" width="286" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Tensão máxima no Capacitor de Acoplamento</p>
+      </description>
+      <input>
+        <e type="operand">VC_max</e>
+        <e type="operand">VC_med</e>
+        <e type="operand">1</e>
+        <e type="operand">RippleC</e>
+        <e type="operand">200</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">78.3869</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="60" left="54" top="2061" width="212" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Corrente eficaz no Capacitor de Acoplamento</p>
+      </description>
+      <input>
+        <e type="operand">Ic_rms</e>
+        <e type="operand">Ioc</e>
+        <e type="operand">1</e>
+        <e type="operand">D</e>
+        <e type="operator" args="2">-</e>
+        <e type="operand">D</e>
+        <e type="operator" args="2">/</e>
+        <e type="function" preserve="true" args="1">sqrt</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">7.3204</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="61" left="387" top="2061" width="237" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Ondulação da tensão no Capacitor de Acoplamento</p>
+      </description>
+      <input>
+        <e type="operand">ΔVC</e>
+        <e type="operand">VC_med</e>
+        <e type="operand">RippleC</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">100</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">0.9738</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="62" left="54" top="2142" width="202" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Resistência Série Equivalente máxima do Capacitor de Acoplamento</p>
+      </description>
+      <input>
+        <e type="operand">C_esr_max</e>
+        <e type="operand">ΔVC</e>
+        <e type="operand">ΔILi</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">0.6977</e>
+        <e type="operand" style="unit">Ω</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="63" left="261" top="2178" width="520" height="23" color="#ff0000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>-&gt;&gt; Acho que isso está errado, essa resistência está muito alta.</p>
+    </text>
+  </region>
+  <region id="64" left="54" top="2214" width="206" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Capacitância de Acoplamento</p>
+      </description>
+      <input>
+        <e type="operand">C</e>
+        <e type="operand">ILi_med</e>
+        <e type="operand">1</e>
+        <e type="operand">D</e>
+        <e type="operator" args="2">-</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">f</e>
+        <e type="operand">ΔVC</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">μF</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">39.4638</e>
+      </result>
+    </math>
+  </region>
+  <region id="65" top="2304" color="#000000" bgColor="#ffffff">
+    <area terminator="true" />
+  </region>
+  <region id="66" left="54" top="2322" width="328" height="27" color="#ff0000" bgColor="#ffffff" fontSize="12">
+    <text lang="por">
+      <p>Cálculos para Capacitor de Saída</p>
+    </text>
+  </region>
+  <region id="67" left="54" top="2358" width="150" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Tensão média no Capacitor de Saída</p>
+      </description>
+      <input>
+        <e type="operand">VCo_med</e>
+        <e type="operand">Vo</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">46.8</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="68" left="378" top="2358" width="310" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Tensão máxima no Capacitor de Saída</p>
+      </description>
+      <input>
+        <e type="operand">VCo_max</e>
+        <e type="operand">VCo_med</e>
+        <e type="operand">1</e>
+        <e type="operand">RippleCo</e>
+        <e type="operand">200</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">46.8819</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="69" left="54" top="2430" width="187" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Corrente eficaz no Capacitor de Saída</p>
+      </description>
+      <input>
+        <e type="operand">ICo_rms</e>
+        <e type="operand">ΔILo</e>
+        <e type="operand">2</e>
+        <e type="operand">3</e>
+        <e type="function" preserve="true" args="1">sqrt</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">0.2696</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="70" left="378" top="2430" width="261" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Ondulação da tensão no Capacitor de Saída</p>
+      </description>
+      <input>
+        <e type="operand">ΔVCo</e>
+        <e type="operand">VCo_med</e>
+        <e type="operand">RippleCo</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">100</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">0.1638</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="71" left="54" top="2502" width="210" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Resistência Série Equivalente máxima do Capacitor de Saída</p>
+      </description>
+      <input>
+        <e type="operand">Co_esr_max</e>
+        <e type="operand">ΔVCo</e>
+        <e type="operand">ΔILo</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">0.1754</e>
+        <e type="operand" style="unit">Ω</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="72" left="54" top="2565" width="195" height="49" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Capacitância de Saída mínima</p>
+      </description>
+      <input>
+        <e type="operand">Co</e>
+        <e type="operand">D</e>
+        <e type="operand">Vi</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">8</e>
+        <e type="operand">f</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">Lo</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">ΔVCo</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">μF</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">7.1267</e>
+      </result>
+    </math>
+  </region>
+  <region id="73" left="279" top="2565" width="200" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>(Equação alternativa)</p>
+      </description>
+      <input>
+        <e type="operand">Co_min</e>
+        <e type="operand">ΔILo</e>
+        <e type="operand">8</e>
+        <e type="operand">f</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">ΔVCo</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">μF</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">7.1267</e>
+      </result>
+    </math>
+  </region>
+  <region id="74" top="2655" color="#000000" bgColor="#ffffff">
+    <area terminator="true" />
+  </region>
+  <region id="75" left="54" top="2673" width="218" height="27" color="#ff0000" bgColor="#ffffff" fontSize="12">
+    <text lang="por">
+      <p>Cálculos para a Chave</p>
+    </text>
+  </region>
+  <region id="76" left="54" top="2709" width="271" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Corrente máxima na Chave</p>
+      </description>
+      <input>
+        <e type="operand">Is_max</e>
+        <e type="operand">ILi_max</e>
+        <e type="operand">ILo_max</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">17.1867</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="77" left="423" top="2709" width="198" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Tensão máxima na chave</p>
+      </description>
+      <input>
+        <e type="operand">Vs_max</e>
+        <e type="operand">VC_max</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">78.3869</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="78" left="54" top="2763" width="342" height="35" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Corrente eficaz na Chave</p>
+      </description>
+      <input>
+        <e type="operand">Is_rms</e>
+        <e type="operand">ILi_rms</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">ILo_rms</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operand">D</e>
+        <e type="bracket">(</e>
+        <e type="function" preserve="true" args="1">sqrt</e>
+        <e type="operator" args="2">*</e>
+        <e type="function" preserve="true" args="1">sqrt</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">10.1658</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="79" left="423" top="2763" width="290" height="25" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Corrente média na Chave</p>
+      </description>
+      <input>
+        <e type="operand">Is_med</e>
+        <e type="operand">ILi_med</e>
+        <e type="operand">ILo_med</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operand">D</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">9.6255</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="80" left="54" top="2853" width="888" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p bold="true">MOSFET -&gt; IRFP4321PBF -&gt; https://www.infineon.com/dgdl/irfp4321pbf.pdf?fileId=5546d462533600a40153562c4f802011</p>
+    </text>
+  </region>
+  <region id="81" left="54" top="2889" width="171" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">rds_on</e>
+        <e type="operand">2</e>
+        <e type="operand">15.5</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand" style="unit">mΩ</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">mΩ</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">31</e>
+      </result>
+    </math>
+  </region>
+  <region id="82" left="270" top="2889" width="77" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">tsr</e>
+        <e type="operand">60</e>
+        <e type="operand" style="unit">ns</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="83" left="387" top="2889" width="77" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">tsf</e>
+        <e type="operand">35</e>
+        <e type="operand" style="unit">ns</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="84" left="54" top="2934" width="268" height="31" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perda por condução na chave</p>
+      </description>
+      <input>
+        <e type="operand">Ps_cond</e>
+        <e type="operand">rds_on</e>
+        <e type="operand">Is_rms</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">D</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">1.9246</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="85" left="351" top="2934" width="324" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perda por comutação na chave</p>
+      </description>
+      <input>
+        <e type="operand">Ps_com</e>
+        <e type="operand">Is_max</e>
+        <e type="operand">Vs_max</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">f</e>
+        <e type="operand">tsr</e>
+        <e type="operand">tsf</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">6.3993</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="86" left="54" top="2997" width="223" height="23" color="#000000" bgColor="#ffff00" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perda total na chave</p>
+      </description>
+      <input>
+        <e type="operand">Ps</e>
+        <e type="operand">Ps_com</e>
+        <e type="operand">Ps_cond</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">8.3239</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="87" left="351" top="3015" width="95" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Percentual de potência perdida na chave</p>
+      </description>
+      <input>
+        <e type="operand">Ps</e>
+        <e type="operand">Po</e>
+        <e type="operator" args="2">/</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">%</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">2.7806</e>
+      </result>
+    </math>
+  </region>
+  <region id="88" top="3105" color="#000000" bgColor="#ffffff">
+    <area terminator="true" />
+  </region>
+  <region id="89" left="54" top="3123" width="218" height="27" color="#ff0000" bgColor="#ffffff" fontSize="12">
+    <text lang="por">
+      <p>Cálculos para o Diodo</p>
+    </text>
+  </region>
+  <region id="90" left="54" top="3159" width="271" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Corrente máxima no Diodo</p>
+      </description>
+      <input>
+        <e type="operand">ID_max</e>
+        <e type="operand">ILi_max</e>
+        <e type="operand">ILo_max</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">17.1867</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="91" left="423" top="3159" width="198" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Tensão máxima na chave</p>
+      </description>
+      <input>
+        <e type="operand">VD_max</e>
+        <e type="operand">VC_max</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">78.3869</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="92" left="54" top="3222" width="351" height="35" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Corrente eficaz na Diodo</p>
+      </description>
+      <input>
+        <e type="operand">ID_rms</e>
+        <e type="operand">ILi_rms</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">ILo_rms</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operand">1</e>
+        <e type="operand">D</e>
+        <e type="operator" args="2">-</e>
+        <e type="bracket">(</e>
+        <e type="function" preserve="true" args="1">sqrt</e>
+        <e type="operator" args="2">*</e>
+        <e type="function" preserve="true" args="1">sqrt</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">9.1784</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="93" left="423" top="3231" width="307" height="25" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="por">
+        <p>Corrente média no Diodo</p>
+      </description>
+      <input>
+        <e type="operand">ID_med</e>
+        <e type="operand">ILi_med</e>
+        <e type="operand">ILo_med</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operand">1</e>
+        <e type="operand">D</e>
+        <e type="operator" args="2">-</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">6.3964</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="94" left="54" top="3321" width="600" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p bold="true">DIODO 1 -&gt; 60EPU06PBF -&gt; https://www.vishay.com/docs/94023/vs-60epu06p.pdf</p>
+    </text>
+  </region>
+  <region id="95" left="63" top="3357" width="93" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">V_to1</e>
+        <e type="operand">0.6</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="96" left="198" top="3357" width="170" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">r_T1</e>
+        <e type="operand">V_to1</e>
+        <e type="operand">ID_med</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">Ω</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">0.0938</e>
+      </result>
+    </math>
+  </region>
+  <region id="97" left="441" top="3357" width="101" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Qrr1</e>
+        <e type="operand">1382</e>
+        <e type="operand" style="unit">nC</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="98" left="54" top="3402" width="357" height="31" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perda por condução no Diodo</p>
+      </description>
+      <input>
+        <e type="operand">PD1_cond</e>
+        <e type="operand">V_to1</e>
+        <e type="operand">ID_med</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">r_T1</e>
+        <e type="operand">ID_rms</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">11.7401</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="99" left="432" top="3402" width="252" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perda por comutação no Diodo</p>
+      </description>
+      <input>
+        <e type="operand">PD1_com</e>
+        <e type="operand">Qrr1</e>
+        <e type="operand">VD_max</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">f</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">10.8331</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="100" left="54" top="3465" width="255" height="23" color="#000000" bgColor="#ffff00" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perda total no Diodo</p>
+      </description>
+      <input>
+        <e type="operand">PD1</e>
+        <e type="operand">PD1_com</e>
+        <e type="operand">PD1_cond</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">22.5732</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="101" left="351" top="3474" width="103" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Percentual de potência perdida na chave</p>
+      </description>
+      <input>
+        <e type="operand">PD1</e>
+        <e type="operand">Po</e>
+        <e type="operator" args="2">/</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">%</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">7.5407</e>
+      </result>
+    </math>
+  </region>
+  <region id="102" left="63" top="3555" width="608" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p bold="true">DIODO 2 -&gt; V80100-P -&gt; http://www.mouser.com/catalog/specsheets/v80100p.pdf</p>
+    </text>
+  </region>
+  <region id="103" left="72" top="3591" width="109" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">V_to2</e>
+        <e type="operand">0.425</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="104" left="207" top="3591" width="170" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">r_T2</e>
+        <e type="operand">V_to2</e>
+        <e type="operand">ID_med</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">Ω</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">0.0664</e>
+      </result>
+    </math>
+  </region>
+  <region id="105" left="450" top="3591" width="85" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Irr2</e>
+        <e type="operand">45</e>
+        <e type="operand" style="unit">mA</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="106" left="567" top="3591" width="85" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Vrr2</e>
+        <e type="operand">100</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="107" left="684" top="3591" width="85" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">trr2</e>
+        <e type="operand">15</e>
+        <e type="operand" style="unit">ns</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="108" left="63" top="3636" width="349" height="31" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perda por condução no Diodo</p>
+      </description>
+      <input>
+        <e type="operand">PD2_cond</e>
+        <e type="operand">V_to2</e>
+        <e type="operand">ID_med</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">r_T2</e>
+        <e type="operand">ID_rms</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">8.3159</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="109" left="414" top="3636" width="332" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perda por comutação no Diodo</p>
+      </description>
+      <input>
+        <e type="operand">PD2_com</e>
+        <e type="operand">Vrr2</e>
+        <e type="operand">trr2</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">Irr2</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">/</e>
+        <e type="operand">ID_med</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">f</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">0.9628</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="110" left="54" top="3717" width="247" height="23" color="#000000" bgColor="#ffff00" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perda total no Diodo</p>
+      </description>
+      <input>
+        <e type="operand">PD2</e>
+        <e type="operand">PD2_com</e>
+        <e type="operand">PD2_cond</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">9.2788</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="111" left="351" top="3726" width="103" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Percentual de potência perdida na chave</p>
+      </description>
+      <input>
+        <e type="operand">PD2</e>
+        <e type="operand">Po</e>
+        <e type="operator" args="2">/</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">%</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">3.0996</e>
+      </result>
+    </math>
+  </region>
+  <region id="112" top="3798" color="#000000" bgColor="#ffffff">
+    <area terminator="true" />
+  </region>
+</regions>

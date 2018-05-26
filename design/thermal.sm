@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?application progid="SMath Studio Desktop" version="0.98.6179.21440"?>
+<regions>
+  <settings>
+    <identity>
+      <id>0ae5e821-050c-4e4a-a5ec-f840a7986801</id>
+      <revision>112</revision>
+    </identity>
+    <calculation>
+      <precision>4</precision>
+      <exponentialThreshold>5</exponentialThreshold>
+      <fractions>decimal</fractions>
+    </calculation>
+    <pageModel active="true" printAreas="true" simpleEqualsOnly="false" printBackgroundImages="true">
+      <paper id="1" orientation="Portrait" width="850" height="1100" />
+      <margins left="39" right="39" top="39" bottom="39" />
+      <header alignment="Center" color="#a9a9a9">&amp;[DATE] &amp;[TIME] - &amp;[FILENAME]</header>
+      <footer alignment="Center" color="#a9a9a9">&amp;[PAGENUM] / &amp;[COUNT]</footer>
+      <backgrounds />
+    </pageModel>
+    <dependencies>
+      <assembly name="SMath Studio Desktop" version="0.98.6179.21440" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="Math Region" version="0.98.6179.21440" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="Text Region" version="1.10.6179.21446" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
+    </dependencies>
+  </settings>
+  <region id="0" left="108" top="18" width="525" height="29" color="#000000" bgColor="#ffffff" fontSize="14">
+    <text lang="por">
+      <p bold="true">PLANILHA DE CÁLCULO TÉRMICO PARA SEMICONDUTORES</p>
+    </text>
+  </region>
+  <region id="1" left="27" top="54" width="120" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>Diodo: 60APU06</p>
+    </text>
+  </region>
+  <region id="2" left="36" top="72" width="392" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>http://www.vishay.com/docs/94023/vs-60epu06p.pdf</p>
+    </text>
+  </region>
+  <region id="3" left="27" top="90" width="136" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>Mosfet: irfp4321</p>
+    </text>
+  </region>
+  <region id="4" left="36" top="108" width="680" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="eng">
+      <p>http://www.infineon.com/dgdl/irfp4321pbf.pdf?fileId=5546d462533600a40153562c4f802011</p>
+    </text>
+  </region>
+  <region id="5" left="18" top="153" width="64" height="23" border="true" color="#000000" bgColor="#00ffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">SISTEMA</e>
+      </input>
+    </math>
+  </region>
+  <region id="6" left="189" top="153" width="48" height="23" border="true" color="#000000" bgColor="#00ffff" fontSize="10">
+    <text lang="por">
+      <p>CHAVE</p>
+    </text>
+  </region>
+  <region id="7" left="369" top="153" width="48" height="23" border="true" color="#000000" bgColor="#00ffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">DIODO</e>
+      </input>
+    </math>
+  </region>
+  <region id="8" left="486" top="153" width="280" height="38" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="por">
+      <p>Para 10A a queda de tensão VDdsé aproximadamente 0.6V (Datasheet)</p>
+    </text>
+  </region>
+  <region id="9" left="783" top="153" width="408" height="143" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="por">
+      <p>VDS - Tensão dreno source do diodo;QRR - Carga armazenada;rDS – Resistência entre dreno e source;ton - Tempo de atraso para iniciar comutação;toff - Tempo de atraso para interromper comutação.IDMED – Corrente média no diodo;VDMAX – Tensão máxima no diodo;f – frequência de comutação do conversor;ISEF – Corrente eficaz na chave;</p>
+    </text>
+  </region>
+  <region id="10" left="18" top="180" width="85" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">fs</e>
+        <e type="operand">100</e>
+        <e type="operand" style="unit">kHz</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="11" left="189" top="180" width="120" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Rds_s</e>
+        <e type="operand">2</e>
+        <e type="operand">15.5</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand" style="unit">mΩ</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="12" left="369" top="180" width="85" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">VDds</e>
+        <e type="operand">0.6</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="13" left="18" top="207" width="117" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">ISmed</e>
+        <e type="operand">8.4289</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="14" left="189" top="207" width="85" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">TSon</e>
+        <e type="operand">18</e>
+        <e type="operand" style="unit">ns</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="15" left="369" top="207" width="109" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Qrr_d</e>
+        <e type="operand">1394</e>
+        <e type="operand" style="unit">nC</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="16" left="18" top="234" width="117" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">ISef</e>
+        <e type="operand">10.1234</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="17" left="189" top="234" width="93" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">TSoff</e>
+        <e type="operand">25</e>
+        <e type="operand" style="unit">ns</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="18" left="18" top="261" width="125" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">VSmax</e>
+        <e type="operand">79.9254</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="19" left="189" top="261" width="105" height="39" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math optimize="2">
+      <input>
+        <e type="operand">Rjc_s</e>
+        <e type="operand">0.49</e>
+        <e type="operand" style="unit">K</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="20" left="369" top="261" width="105" height="39" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Rjc_d</e>
+        <e type="operand">0.63</e>
+        <e type="operand" style="unit">K</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="21" left="18" top="288" width="117" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">IDmed</e>
+        <e type="operand">8.4289</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="22" left="783" top="297" width="264" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="por">
+      <p>ISMED – Corrente média na chave;</p>
+    </text>
+  </region>
+  <region id="23" left="189" top="306" width="132" height="39" border="true" color="#ff0000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Rcd_s</e>
+        <e type="operand">1.5</e>
+        <e type="operand">0.24</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand" style="unit">K</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="24" left="369" top="306" width="124" height="39" border="true" color="#ff0000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Rcd_d</e>
+        <e type="operand">1.5</e>
+        <e type="operand">0.2</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand" style="unit">K</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="25" left="18" top="315" width="125" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">VDmax</e>
+        <e type="operand">79.9254</e>
+        <e type="operand" style="unit">V</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="26" left="783" top="324" width="432" height="68" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="por">
+      <p>P - Perdas por condução ou comutação;Tj – Temperatura na junção;Rjc – Resistência térmica entre junção e cápsula;Rcd – Resistência térmica entre cápsula e dissipador.</p>
+    </text>
+  </region>
+  <region id="27" left="18" top="342" width="160" height="23" border="true" color="#000000" bgColor="#00ffff" fontSize="10">
+    <text lang="por">
+      <p>TEMERATURA AMBIENTE</p>
+    </text>
+  </region>
+  <region id="28" left="189" top="351" width="93" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Tj_s</e>
+        <e type="operand">125</e>
+        <e type="operand" style="unit">°C</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="29" left="369" top="351" width="93" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Tj_d</e>
+        <e type="operand">125</e>
+        <e type="operand" style="unit">°C</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="30" left="18" top="369" width="69" height="23" border="true" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">TA</e>
+        <e type="operand">55</e>
+        <e type="operand" style="unit">°C</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="31" left="783" top="396" width="544" height="53" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="por">
+      <p>TDMIN – Menor valor obtido no calculo da temperatura do dissipador;Ta – Temperatura ambiente;Ptotais – Somatório de todas as perdas de comutação e condução.</p>
+    </text>
+  </region>
+  <region id="32" left="18" top="423" width="56" height="23" border="true" color="#000000" bgColor="#ffff00" fontSize="10">
+    <text lang="por">
+      <p>MOSFET</p>
+    </text>
+  </region>
+  <region id="33" left="18" top="450" width="217" height="31" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perdas por condução no mosfet</p>
+      </description>
+      <input>
+        <e type="operand">PScond</e>
+        <e type="operand">Rds_s</e>
+        <e type="operand">ISef</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">3.177</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="34" left="45" top="504" width="363" height="25" color="#408080" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="false" position="Top" lang="eng">
+        <p>Temp no dissipador</p>
+      </description>
+      <input>
+        <e type="operand">TDs_cond</e>
+        <e type="operand">Tj_s</e>
+        <e type="operand">PScond</e>
+        <e type="operand">Rjc_s</e>
+        <e type="operand">Rcd_s</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">-</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">°C</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">122.2996</e>
+      </result>
+    </math>
+  </region>
+  <region id="35" left="18" top="531" width="348" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perdas por comutação no mosfet</p>
+      </description>
+      <input>
+        <e type="operand">PScomu</e>
+        <e type="operand">ISmed</e>
+        <e type="operand">VSmax</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">/</e>
+        <e type="operand">TSon</e>
+        <e type="operand">TSoff</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">fs</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">1.4484</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="36" left="45" top="594" width="363" height="25" color="#408080" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">TDs_comu</e>
+        <e type="operand">Tj_s</e>
+        <e type="operand">PScomu</e>
+        <e type="operand">Rjc_s</e>
+        <e type="operand">Rcd_s</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">-</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">°C</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">123.7688</e>
+      </result>
+    </math>
+  </region>
+  <region id="37" left="18" top="630" width="215" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">PS</e>
+        <e type="operand">PScomu</e>
+        <e type="operand">PScond</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">4.6254</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="38" left="18" top="675" width="48" height="23" border="true" color="#000000" bgColor="#ffff00" fontSize="10">
+    <text lang="por">
+      <p>DIODO</p>
+    </text>
+  </region>
+  <region id="39" left="18" top="702" width="217" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perdas por condução no diodo</p>
+      </description>
+      <input>
+        <e type="operand">PDcond</e>
+        <e type="operand">VDds</e>
+        <e type="operand">IDmed</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">5.0573</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="40" left="45" top="747" width="363" height="25" color="#408080" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="false" position="Top" lang="eng">
+        <p />
+      </description>
+      <input>
+        <e type="operand">TDd_cond</e>
+        <e type="operand">Tj_d</e>
+        <e type="operand">PDcond</e>
+        <e type="operand">Rjc_d</e>
+        <e type="operand">Rcd_d</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">-</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">°C</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">120.2967</e>
+      </result>
+    </math>
+  </region>
+  <region id="41" left="18" top="774" width="252" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perdas por comutação no diodo</p>
+      </description>
+      <input>
+        <e type="operand">PDcomu</e>
+        <e type="operand">Qrr_d</e>
+        <e type="operand">VDmax</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">fs</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">11.1416</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="42" left="45" top="819" width="363" height="25" color="#408080" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">TDd_comu</e>
+        <e type="operand">Tj_d</e>
+        <e type="operand">PDcomu</e>
+        <e type="operand">Rjc_d</e>
+        <e type="operand">Rcd_d</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">-</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">°C</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">114.6383</e>
+      </result>
+    </math>
+  </region>
+  <region id="43" left="18" top="855" width="223" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">PD</e>
+        <e type="operand">PDcomu</e>
+        <e type="operand">PDcond</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">16.1989</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="44" left="18" top="891" width="176" height="23" border="true" color="#000000" bgColor="#ffff00" fontSize="10">
+    <text lang="por">
+      <p>ESCOLHA DO DISSIPADOR</p>
+    </text>
+  </region>
+  <region id="45" left="18" top="918" width="377" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Perdas totais</p>
+      </description>
+      <input>
+        <e type="operand">Ptotais</e>
+        <e type="operand">PScond</e>
+        <e type="operand">PScomu</e>
+        <e type="operator" args="2">+</e>
+        <e type="operand">PDcond</e>
+        <e type="operator" args="2">+</e>
+        <e type="operand">PDcomu</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">20.8243</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="46" left="18" top="963" width="460" height="28" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Temperatura mínima do dissipador</p>
+      </description>
+      <input>
+        <e type="operand">TDmin</e>
+        <e type="operand">TDd_comu</e>
+        <e type="operand">TDs_comu</e>
+        <e type="operand">TDd_cond</e>
+        <e type="operand">TDs_cond</e>
+        <e type="operand">1</e>
+        <e type="operand">4</e>
+        <e type="function" preserve="true" args="6">mat</e>
+        <e type="function" preserve="true" args="1">min</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">°C</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">114.6383</e>
+      </result>
+    </math>
+  </region>
+  <region id="47" left="18" top="1008" width="191" height="41" color="#ff0000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <description active="true" position="Top" lang="eng">
+        <p>Resistência térmica mínima do dissipador</p>
+      </description>
+      <input>
+        <e type="operand">RDA</e>
+        <e type="operand">TDmin</e>
+        <e type="operand">TA</e>
+        <e type="operator" args="2">-</e>
+        <e type="bracket">(</e>
+        <e type="operand">Ptotais</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">K</e>
+        <e type="operand" style="unit">W</e>
+        <e type="operator" args="2">/</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">2.8639</e>
+      </result>
+    </math>
+  </region>
+  <region id="48" left="18" top="1071" width="91" height="23" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">k_ΔT</e>
+        <e type="operand">1.257</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="49" left="18" top="1089" width="176" height="47" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">RDA'</e>
+        <e type="operand">RDA</e>
+        <e type="operand">k_ΔT</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">2.2783</e>
+        <e type="operand" style="unit">K</e>
+        <e type="operand" style="unit">S</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand" style="unit">A</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">/</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+</regions>
